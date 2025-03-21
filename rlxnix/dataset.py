@@ -26,7 +26,10 @@ def scan_plugins():
         for mc in dir(m):
             if "__" in mc or "rlxnix" in d:
                 continue
-            submodule = import_module(f"rlxnix.plugins.{d}.{mc}")
+            try:
+                submodule = import_module(f"rlxnix.plugins.{d}.{mc}")
+            except ModuleNotFoundError:
+                continue
             members = inspect.getmembers(submodule, inspect.isclass)
             for _, member in members:
                 if hasattr(member, "_repro_name"):
