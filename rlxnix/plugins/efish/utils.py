@@ -70,7 +70,7 @@ def eod_events(time, eod, threshold=0.0, running_avg=0):
         eod = running_average(eod, running_avg)
     events = time[(eod >= threshold) & (np.roll(eod,1) < threshold)]
 
-    return time[events]
+    return events
 
 
 def extract_am(y:np.ndarray, fs: float = 20000, lporder: int = 4, lpcutoff: float = 300) -> np.ndarray:

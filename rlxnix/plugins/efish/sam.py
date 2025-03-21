@@ -62,21 +62,21 @@ class Sam(EfishEphys):
         return p
 
     @property
-    def isSinewave(self):
+    def is_sinewave(self):
         """True if the stimulus is a sinewave, False if it.
 
         Returns
         -------
-        isSinewave: bool
+        bool: whether or not the stimulus was a sinewave or something else.
         """
         return self.metadata["RePro-Info"]["settings"]["sinewave"][0][0]
 
     @property
-    def isAM(self):
+    def is_amplitude_modulation(self):
         """True if the stimulus is amplitude modulated, False if it is not.
 
         Returns
         -------
-        isAM: bool
+        bool: whether the stimulus is an amplitude modulation or a direct stimulus.
         """
         return self.metadata["RePro-Info"]["settings"]["am"][0][0]
