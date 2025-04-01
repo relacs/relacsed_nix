@@ -191,7 +191,7 @@ class Dataset(object):
             List of RePro class instances that match the repro_name. If repro_name is not given, all repro runs are returned. May be empty.
         """
         def not_found_error(name, exact):
-            logging.warning(f"No repro run with the name {name} found with exact={exact}")
+            logging.debug(f"No repro run with the name {name} found with exact={exact}")
 
         matches = []
         if not repro_name:
